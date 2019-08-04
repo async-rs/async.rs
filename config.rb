@@ -184,8 +184,6 @@ set :markdown, renderer: MarkdownRenderer,
     fenced_code_blocks: true,
     with_toc_data: true
 
-set :disqus_embed_url, 'https://rom-rb-blog.disqus.com/embed.js'
-
 activate :blog,
   prefix: 'blog',
   layout: 'blog_article',
