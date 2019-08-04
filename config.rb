@@ -115,12 +115,15 @@ helpers do
 
   def design_by
     url = 'https://github.com/angeloashmore'
-    "Design by #{link_to '@angeloashmore', url}."
+    text = "Design by #{link_to '@angeloashmore', url}."
+    url = 'https://github.com/skade'
+    text = text + "Adapted by #{link_to '@skade', url}."
+    text
   end
 
   def logo_by
-    url = 'https://github.com/kapowaz'
-    "Logo by #{link_to '@kapowaz', url}."
+    url = 'https://github.com/??'
+    "Logo by #{link_to '@??', url}."
   end
 
   def version
@@ -150,7 +153,7 @@ helpers do
     link_to "Provide feedback!", GH_NEW_ISSUE_URL % tokens, class: "button"
   end
 
-  GH_EDIT_FILE_URL = "https://github.com/rom-rb/rom-rb.org/blob/master%{current_path}".freeze
+  GH_EDIT_FILE_URL = "https://github.com/async-std/async.rs/blob/master%{current_path}".freeze
   def edit_file_link
     link_to "Edit on GitHub", GH_EDIT_FILE_URL % { current_path: current_source_file}, class: "button"
   end
