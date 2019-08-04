@@ -39,6 +39,8 @@ page '/learn/*', layout: 'guide', data: { sidebar: '3.0/learn/sidebar' }
 page '/guides/*', layout: 'guide', data: { sidebar: '3.0/guides/sidebar' }
 page '/blog/*', data: { sidebar: 'blog/sidebar' }
 
+set :api_base_url, "https://api.async.rs"
+
 Site.projects.each do |project|
   proxy "/api/#{project.name}/index.html", '/api/project.html', layout: 'api', locals: { project: project }, ignore: true
 end
@@ -47,16 +49,6 @@ end
 # in Site class, so whatever
 configure :build do
   ENV['BUILD'] = 'true'
-end
-
-def next?
-  ENV['NEXT'] == 'true'
-end
-
-if next?
-  set :api_base_url, "http://www.rubydoc.info/#{next? ? 'github/rom-rb' : 'gems'}"
-else
-  set :api_base_url, "https://api.rom-rb.org"
 end
 
 set :api_url_template, "#{config.api_base_url}/%{project}/ROM/%{path}"
