@@ -3,14 +3,13 @@ title: Status
 ---
 
 markdown:
-  # ROM Project Status
+  # async-std Project Status
 
-  The ROM ecosystem consists of the core rom gem along with rom-rails, for Rails
-  integration, and various adapter gems.
+  The async-std ecosystem consists of the core async-std and async-task libraries.
 
-  With so many projects, it can be difficult to keep up on the status of each
-  one. Below is a break-down for each rom-related project, the current stable
-  released version, and the build status for the master branch.
+  Below, you find a breakdown of their metrics, to judge their current status.
+
+  Also listed are some dependencies.
 
 table
   thead
@@ -18,9 +17,6 @@ table
       th Project
       th Released Version
       th Master Build Status
-      th CodeClimate
-      th Test Coverage
-      th Doc Coverage
   tbody
     - projects.each do |project|
       tr
@@ -30,14 +26,6 @@ table
           a href=project.rubygems_url
             img src=project.version_badge
         td
-          a href="https://github.com/rom-rb/#{project}"
+          a href="https://github.com/async-std/#{project}"
             img src=project.ci_badge
-        td
-          a href=project.codeclimate_url
-            img src=project.codeclimate_badge
-        td
-          a href=project.codeclimate_url
-            img src=project.coverage_badge
-        td
-          a href=project.inch_url
-            img src=project.inch_badge
+

@@ -1,15 +1,16 @@
 header.header
-  .header__logo= link_to 'Ruby Object Mapper', '/', class: 'header__logo__link'
+  .header__logo= link_to 'async-std', '/', class: 'header__logo__link'
   #navigation__toggler.header__menu-toggler
     span.fa.fa-navicon
   #navigation__items.header__menu
     nav.menu
       ul.menu__items
         li.menu__item= nav_link_to 'Learn', "/#{ version }/learn", class: 'menu__item__link'
-        li.menu__item= nav_link_to 'Guides', "/#{ version }/guides", class: 'menu__item__link'
         li.menu__item= nav_link_to 'API', '/api', class: 'menu__item__link'
         li.menu__item= nav_link_to 'Blog', '/blog', class: 'menu__item__link'
         li.menu__item= nav_link_to 'Contribute', '/contribute', class: 'menu__item__link'
-        li.menu__item= nav_link_to 'Discuss', 'https://discourse.rom-rb.org', class: 'menu__item__link'
+        // TODO: Renable "Discuss"
+        //li.menu__item= nav_link_to 'Discuss', 'https://discourse.rom-rb.org', class: 'menu__item__link'
         li.menu__item= nav_link_to 'Status', '/status', class: 'menu__item__link'
-        li.menu__item--last= nav_link_to 'Donate', 'https://opencollective.com/rom', class: 'menu__item__link'
+        // TODO: Setup Donation options
+        //li.menu__item--last= nav_link_to 'Donate', 'https://opencollective.com/rom', class: 'menu__item__link'

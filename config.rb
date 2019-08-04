@@ -90,16 +90,16 @@ helpers do
   end
 
   def head_title
-    current_page.data.title.nil? ? 'ROM' : "ROM - #{current_page.data.title}"
+    current_page.data.title.nil? ? 'async-std' : "async-std - #{current_page.data.title}"
   end
 
   def og_url
-    Site.development? ? current_page.url : "http://rom-rb.org#{current_page.url}"
+    Site.development? ? current_page.url : "http://async.rs#{current_page.url}"
   end
 
   def og_description
     if current_page.data.description.nil?
-      "An open-source persistence and mapping toolkit for Ruby built for speed and simplicity."
+      "A Rust library for easy and understandable async programming"
     else
       current_page.data.description
     end

@@ -1,40 +1,6 @@
 -
-  name: rom
+  name: async-std
+  api_url: https://docs.rs/async-std
 -
-  name: rom-sql
--
-  name: rom-elasticsearch
--
-  name: rom-cassandra
--
-  name: rom-couchdb
--
-  name: rom-csv
--
-  name: rom-event_store
--
-  name: rom-git
--
-  name: rom-http
--
-  name: rom-influxdb
--
-  name: rom-json
--
-  name: rom-kafka
--
-  name: rom-mongo
--
-  name: rom-neo4j
--
-  name: rom-rails
--
-  name: rom-redis
--
-  name: rom-rethinkdb
--
-  name: rom-roda
--
-  name: rom-yaml
--
-  name: rom-yesql
+  name: async-task
+  api_url: https://docs.rs/async-task
