@@ -1,11 +1,8 @@
-[travis]: https://travis-ci.com/rom-rb/rom-rb.org
-[chat]: https://rom-rb.zulipchat.com
+[chat]: https://discord.gg/MGyHyJv
 
-# rom-rb.org [![Join the chat at https://rom-rb.zulipchat.com](https://img.shields.io/badge/rom--rb-join%20chat-942283.svg)][chat]
+# async-std [![Join the chat on Discord](https://img.shields.io/discord/598880689856970762)][chat]
 
-[![Build Status](https://travis-ci.com/rom-rb/rom-rb.org.svg?branch=master)][travis]
-
-The official rom-rb website.
+The official async-std and async-task website.
 
 ## Build Instructions
 
