@@ -6,13 +6,11 @@ title: Contribute
 
 async-std is a community project open to contribution.
 
-The primary way to contribute to async-std is to use it and encourage other people to use it. Please let us know of any [issues](https://github.com/async-std/async-std/issue/new) that you may find, however big and small. Higher-level feedback can be given [here](#Community).
+The primary way to contribute to async-std is to use it and encourage other people to use it. Please let us know of any [issues](https://github.com/async-std/async-std/issue/new) that you may find, however big and small. Higher-level feedback can be given [here](#Community). Fixed and improvements to [any of our repositories](https://github.com/async-std/) are highly welcome.
 
-We also appreciate [bug and documentation fixes](https://github.com/async-std/async-std/issue/new) and will also take any kind of other [code contributions](https://github.com/async-std/async-std/).
+As async programming is a topic that needs good understanding, contributions to our learning materials and examples collection are highly appreciated!
 
-As async programming is a topic that needs good understanding, contribtions to our learning materials and examples collection are highly appreciated!
-
-Also, contributions to our [dependencies](/status) are very helpful and bring the whole ecosystem forward.
+Also, contributions to our [dependencies](/status) are very helpful and bring the whole ecosystem forward!
 
 ## Getting Started
 
