@@ -26,7 +26,7 @@ Join [the conversation on Discord](https://discord.gg/mDsWXg) to discuss anythin
 
 ## Contribute
 
-Look for issues marked with [help wanted](https://github.com/async-std/async-std/labels/help%20wanted). That’s a sign that a unit of work is up for grabs. We also label issues as [beginner friendly](https://github.com/async-std/async-std/labels/beginner%20friendly).
+Look for issues marked with [help wanted](https://github.com/async-std/async-std/labels/help%20wanted). That’s a sign that a unit of work is up for grabs. We also label issues as [beginner friendly](https://github.com/async-std/async-std/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
 
 Before diving into larger code contributions, it’s best to check in [on chat](https://discord.gg/mDsWXg) or post a comment on the relevant GitHub issue to let others know you’re interested and ensure you understand the context.
 
