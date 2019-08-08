@@ -50,7 +50,7 @@ module Site
     end
 
     def api_host_url
-      Site.development? ? "http://localhost:4000/docs" : "https://api.rom-rb.org"
+      "https://docs.rs/"
     end
   end
 end
