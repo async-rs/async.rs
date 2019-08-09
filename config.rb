@@ -102,20 +102,20 @@ helpers do
   end
 
   def copyright
-    "&copy; 2014-#{Time.now.year} Ruby Object Mapper."
+    "&copy; 2019-#{Time.now.year} async.rs team."
   end
 
   def design_by
     url = 'https://github.com/angeloashmore'
-    text = "Design by #{link_to '@angeloashmore', url}."
+    text = "Design by #{link_to '@angeloashmore', url}. "
     url = 'https://github.com/skade'
     text = text + "Adapted by #{link_to '@skade', url}."
     text
   end
 
   def logo_by
-    url = 'https://github.com/??'
-    "Logo by #{link_to '@??', url}."
+    url = 'https://twitter.com/uracreative'
+    "Logo by #{link_to '@uracreative', url}."
   end
 
   def version
@@ -134,12 +134,12 @@ helpers do
      *next_vs]
   end
 
-  GH_NEW_ISSUE_URL = "https://github.com/rom-rb/rom-rb.org/issues/new?labels=%{labels}&assignees=%{assignees}&title=%{title}".freeze
+  GH_NEW_ISSUE_URL = "https://github.com/async-std/async-rs/issues/new?labels=%{labels}&assignees=%{assignees}&title=%{title}".freeze
   def feedback_link
     tokens = {
       title: "Feedback on #{URI.encode(head_title)}",
       labels: "feedback",
-      assignees: "solnic"
+      assignees: "skade"
     }
 
     link_to "Provide feedback!", GH_NEW_ISSUE_URL % tokens, class: "button"
