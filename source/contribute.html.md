@@ -6,7 +6,7 @@ title: Contribute
 
 async-std is a community project open to contribution.
 
-The primary way to contribute to async-std is to use it and encourage other people to use it. Please let us know of any [issues](https://github.com/async-std/async-std/issue/new) that you may find, however big and small. Higher-level feedback can be given [here](#Community). Fixed and improvements to [any of our repositories](https://github.com/async-std/) are highly welcome.
+The primary way to contribute to async-std is to use it and encourage other people to use it. Please let us know of any [issues](https://github.com/async-std/async-std/issues/new) that you may find, however big and small. Higher-level feedback can be given [here](#community). Fixed and improvements to [any of our repositories](https://github.com/async-std/) are highly welcome.
 
 As async programming is a topic that needs good understanding, contributions to our learning materials and examples collection are highly appreciated!
 
@@ -14,13 +14,13 @@ Also, contributions to our [dependencies](/status) are very helpful and bring th
 
 ## Getting Started
 
-Use [async-std](https://github.com/async-std/async-std) and [async-task](https://github.com/async-std/async-std) on an existing project.
+Use [async-std](https://github.com/async-std/async-std) and [async-task](https://github.com/async-std/async-task) on an existing project.
 
 Dive deeper into the ecosystem by integrating your libraries on async-std.
 
 ## Community
 
-Join [the conversation on Discord](https://discord.gg/mDsWXg) to discuss anything related to async-std.
+Join [the conversation on Discord](https://discord.gg/JvZeVNe) to discuss anything related to async-std.
 
 ## Contribute
 
