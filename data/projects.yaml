@@ -4,3 +4,6 @@
 -
   name: async-task
   api_url: https://docs.rs/async-task
+-
+  name: async-tls
+  api_url: https://docs.rs/async-tls
