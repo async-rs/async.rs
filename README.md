@@ -2,7 +2,7 @@
 
 # async-std [![Join the chat on Discord](https://img.shields.io/discord/598880689856970762)][chat]
 
-The official async-std and async-task website. Based on the [rom-rb][rom-rb] website, originally created by [@angeloashmore][angeloashmore].
+The official `async-std` website. Based on the [rom-rb][rom-rb] website, originally created by [@angeloashmore][angeloashmore].
 
 [rom-rb]: https://rom-rb.org
 [angeloashmore]: https://github.com/angeloashmore
