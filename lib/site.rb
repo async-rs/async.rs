@@ -54,7 +54,7 @@ module Site
     end
 
     def api_host_url
-      "https://docs.rs/"
+      "https://docs.rs"
     end
   end
 end
