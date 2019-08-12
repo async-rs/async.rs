@@ -102,7 +102,12 @@ helpers do
   end
 
   def copyright
-    "&copy; 2019-#{Time.now.year} async.rs team."
+    copyright_time = if Time.now.year == 2019
+      "2019"
+    else
+      "2019-#{Time.now.year}"
+    end
+    "&copy; #{copyright_time} async.rs team."
   end
 
   def design_by
