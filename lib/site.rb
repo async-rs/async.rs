@@ -34,7 +34,11 @@ module Site
     end
 
     def docsrs_url
-      "https://docs.rs/gems/#{name}"
+      "https://docs.rs/#{name}"
+    end
+
+    def crates_io_url
+      "https://crates.io/crates/#{name}"
     end
 
     def version_badge
