@@ -8,22 +8,21 @@ author: "Stjepan Glavina"
 We are happy to announce the immediate release of `async-std` `0.99.0` into beta with intent to release by end of September.
 
 `async-std` is a library making asynchronous programming in Rust accessible to everyone.
-It comes with extensive documentation in both in API and in book form, runs is easy to use and provides a stable interface to base your applications on.
+It comes with extensive documentation in both in API and in book form, is easy to use, and provides a stable interface to base your applications on.
 
 ## Built by experts
 
-`async-std` is created and built by [Stjepan Glavina](https://github.com/stjepang) and reuses many ideas built into the `crossbeam` crate.
+`async-std` is created and built by [Stjepan Glavina](https://github.com/stjepang) and reuses many ideas from [`crossbeam`](https://crates.io/crates/crossbeam) that have been successful in high-performance contexts throughout the Rust ecosystem.
 
 ## Reliable interfaces
 
-`async-std` is a faithful port of Rust's `libstd` interface to the `async/await` world. The standard libraries interfaces are well understood and well learned by many Rust programmers. `async-std` ports many of them over, making blocking functions asynchronous.
+`async-std` is a faithful port of Rust's `libstd` interface to the `async/await` world. The standard library's interfaces are well-understood and well-learned by many Rust programmers. `async-std` ports many of them over, making its blocking functions asynchronous.
 
-This API strategy allows for quick iteration on the core: setting up a fresh and clean foundation for a small and focused async library with clear semantics.
-
+This API strategy allows for quick iteration on the core: setting up a fresh and clean foundation for a small and focused async library with clear semantics. If you're familiar with Rust's standard library, very little should come as a surprise.
 
 ## `async/await` ready
 
-`async-std` is built from the ground up to support the new async programming model coming up in Rust 1.38, along with an extensive set of coding practices derived from our previous work in the field. To that end, `async-std` does not only provide you with asynchronous versions of the io functionality found in `libstd`, but also with `async/await`-ready versions of `Mutex`.
+`async-std` is built from the ground up to support the new async programming model coming up in Rust 1.38, along with an extensive set of coding practices derived from our previous work in the field. To that end, `async-std` does not only provide you with asynchronous versions of the io functionality found in `libstd`, but also with `async/await`-ready versions of `Mutex` and `RwLock`.
 
 `async-std` serves as a new start for the async ecosystem, with a fresh codebase and clearly considered semantics. We also believe that `async-std` serves as the best way to port existing single-threaded applications over to the asynchronous world.
 
