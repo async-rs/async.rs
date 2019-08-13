@@ -8,35 +8,34 @@ author: "Stjepan Glavina"
 We are happy to announce the immediate release of `async-std` `0.99.0` into beta with intent to release by end of September.
 
 `async-std` is a library making asynchronous programming in Rust accessible to everyone.
-It comes with extensive documentation, both in API and in book form, runs is easy to use and provides a stable interface to base your applications on.
+It comes with extensive documentation in both in API and in book form, runs is easy to use and provides a stable interface to base your applications on.
 
 ## Built by experts
 
-`async-std` is created and built by Stjepan Glavina and reuses many ideas built into the `crossbeam` crate.
+`async-std` is created and built by [Stjepan Glavina](https://github.com/stjepang) and reuses many ideas built into the `crossbeam` crate.
 
 ## Reliable interfaces
 
-`async-std` is a faithful port of Rusts `libstd` interface to the `async/await` world. The standard libraries interfaces are well understood and well learned by many Rust programmers. `async-std` ports many of them over, making blocking functions asynchronous.
+`async-std` is a faithful port of Rust's `libstd` interface to the `async/await` world. The standard libraries interfaces are well understood and well learned by many Rust programmers. `async-std` ports many of them over, making blocking functions asynchronous.
 
-This API strategy allowed us to quickly iterate on the core: set up a fresh and clean foundation
-for a small and focused async library with clear semantics.
+This API strategy allows for quick iteration on the core: setting up a fresh and clean foundation for a small and focused async library with clear semantics.
 
 
 ## `async/await` ready
 
-`async-std` is build from the ground up to support the new programming async model coming up in Rust 1.38, along with an extensive set of coding practices derived from our previous work in the field. To that end, `async-std` does not only provide you with asynchronous versions of the io functionality found in `libstd`, but also with `async/await`-ready versions of `Mutex`.
+`async-std` is built from the ground up to support the new async programming model coming up in Rust 1.38, along with an extensive set of coding practices derived from our previous work in the field. To that end, `async-std` does not only provide you with asynchronous versions of the io functionality found in `libstd`, but also with `async/await`-ready versions of `Mutex`.
 
 `async-std` serves as a new start for the async ecosystem, with a fresh codebase and clearly considered semantics. We also believe that `async-std` serves as the best way to port existing single-threaded applications over to the asynchronous world.
 
 ## A powerful, single-allocation task model
 
-Among the core `async-std` is the `async_std::task` module. Its interface resembles Rusts `std::thread` module, by automatically providing a `JoinHandle` type and a backchannel. `async-std`s tasks philosophy follows those of the Rust std API: It gives you a useful, featureful abstraction that is at the same time powerful and close to the metal. [Read the book for more on the thinking behind][tasks-book].
+Among the core `async-std` is the `async_std::task` module. Its interface resembles Rusts `std::thread` module, by automatically providing a `JoinHandle` type and a backchannel. `async-std`s task philosophy follows those of the Rust std API: It gives you a useful, featureful abstraction that is at the same time powerful and close to the metal. [Read the book for more on the thinking behind][tasks-book].
 
 When a new task is constructed, it happens in a _single_ allocation. This includes allocation of all communication channels. You can read up more about how tasks work internally in the [async-task library documentation][async-task-docs].
 
 ## Teaching and Documentation
 
-`async-std` comes with a [fully documented API][async-std-api] and a [book][async-std-book], teaching you about both using the library and writing applications in it. It should not leave any questions unanswered. This isn't true? [Please file a bug][file-bug].
+`async-std` comes with a [fully documented API][async-std-api] and a [book][async-std-book], teaching you about both using the library and writing applications in it. We see documentation as a first class feature, so if something is confusing, please [file an issue][file-bug]!.
 
 `async-std`s documentation is written by experienced Rust trainers.
 
@@ -52,7 +51,7 @@ We'd like to take this moment to thank [all our contributors][contributors] up t
 
 ## Additional libraries
 
-`async-std` also provides a currently unstable library for Transport Layer Security (TLS), with the intent to ship a minimal stable version together with the end release.
+`async-std` also provides a currently unstable library for Transport Layer Security (TLS), called `async-tls`, with the intent to ship a minimal stable version together with the first stable release. `async-tls` does not depend on `async-std`.
 
 ## Security and reliability
 
