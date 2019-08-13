@@ -1,6 +1,6 @@
 ---
 title: Announcing async-std
-date: 2019-08-15
+date: 2019-08-13
 tags: release,announcement
 author: "Stjepan Glavina"
 ---
