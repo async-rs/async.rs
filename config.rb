@@ -98,7 +98,7 @@ helpers do
   end
 
   def og_image
-    "http://rom-rb.org/images/logo--card.png"
+    "http://async.rs/images/logo--card.png"
   end
 
   def copyright
