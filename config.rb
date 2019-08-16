@@ -98,7 +98,7 @@ helpers do
   end
 
   def og_image
-    "http://async.rs/images/logo--card.png"
+    "https://async.rs/images/logo--card.png"
   end
 
   def copyright
