@@ -84,11 +84,11 @@ By mimicking standard library's well-understood APIs as closely as possible, we 
 
 ## Relationship to `futures` and other libraries
 
-`async-std` is a standalone library based on the `Future` trait and supporting set of traits from the `futures` library.
+`async-std` is a standalone library based on the [`Future`][future-trait] trait and supporting set of traits from the [`futures`](https://github.com/rust-lang-nursery/futures-rs) library.
 
 Since parts of the `futures` API is still in active development and we want to provide strong stability guarantees to our users, we're relying on a minimal and most stable set of traits from `futures`.
 
-At the same time, we're serious about compatibility with the whole async ecosystem and therefore have put effort into designing the API in such a way that does not put our crate above other similar ones, or lock users into our ecosystem. We do not require compatibility layers or any extra setup to use `async-std` with other libraries like `futures`!
+At the same time, we're serious about compatibility with the whole async ecosystem and therefore have put effort into designing the API in such a way that does not put our crate above other similar ones, or lock users into our ecosystem. We do not require compatibility layers or any extra setup to use `async-std` with other libraries like `futures`.
 
 ## Efficient single-allocation tasks
 
@@ -108,17 +108,17 @@ We treat documentation as a first-class feature, so if you find anything in it c
 
 ## The path towards 1.0
 
-`async-std` is currently in beta. We're aiming for a stable release by _September 26th, 2019_, on the same day beta release of [Rust 1.39][forge] comes out too.
+`async-std` is currently in beta. We're aiming for a stable release by _September 26th, 2019_, on the same day beta release of [Rust 1.39][forge] comes out.
 
-The initial version number `0.99` expresses how close we are to `1.0`. `async-std` will remain in beta until we feel `async/await` is finally on track to stabilization.
+The initial version number `0.99` expresses how close we are to `1.0`. `async-std` will remain in beta until `async`/`await` is on a committed track to stabilization.
 
-During the beta period, we will relase a new patch version for API extensions and backwards-compatible changes, and a new minor version for breaking changes. Ideally, we can manage without a breaking change towards `1.0`.
+During our beta period, we will relase a new patch version for API extensions and backwards-compatible changes, and a new minor version for breaking changes. In the ideal scenario, we will manage without any breaking changes towards `1.0`.
 
 ## Security and reliability
 
 `async-std` has documented [SemVer][semver] and [security practices][security].
 
-We use a small number of well-vetted and checked libraries, implementing all the core primitives `async-std` needs.
+We use a small number of well-vetted and checked dependencies, implementing all the core primitives `async-std` needs.
 
 ## Authors and community
 
@@ -132,7 +132,7 @@ See our [contribution][contribution] section for details. Want to help out? Feel
 
 Thanks to all contributors and early users for providing us feedback during development!
 
-Finally, thanks to [Ferrous Systems][ferrous-systems] for funding this project! If you'd like to help fund `async-std` to evolve faster, please get in contact with us.
+Finally, thanks to [Ferrous Systems][ferrous-systems] for funding this project! If you'd like to help fund development on `async-std`, please get in contact with us.
 
 [chat-tutorial]: https://github.com/async-rs/a-chat
 [async-task-docs]: https://docs.rs/async-task
@@ -149,3 +149,6 @@ Finally, thanks to [Ferrous Systems][ferrous-systems] for funding this project! 
 [good-first-issues]: https://github.com/async-rs/async-std/issues?q=is%3Aopen+is%3Aissue+no%3Amilestone+label%3A%22good+first+issue%22
 [discord]: https://discord.gg/JvZeVNe
 [std-thread]: https://doc.rust-lang.org/std/thread/index.html
+[future-trait]: https://doc.rust-lang.org/nightly/std/future/trait.Future.html
+[futures-rs]: https://github.com/rust-lang-nursery/futures-rs
+[async-task]: https://github.com/async-rs/async-task
