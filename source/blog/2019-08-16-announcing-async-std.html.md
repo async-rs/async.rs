@@ -112,7 +112,7 @@ We treat documentation as a first-class feature, so if you find anything in it c
 
 The initial version number `0.99` expresses how close we are to `1.0`. `async-std` will remain in beta until `async`/`await` is on a committed track to stabilization.
 
-During our beta period, we will relase a new patch version for API extensions and backwards-compatible changes, and a new minor version for breaking changes. In the ideal scenario, we will manage without any breaking changes towards `1.0`.
+During our beta period, we will release a new patch version for API extensions and backwards-compatible changes, and a new minor version for breaking changes. In the ideal scenario, we will manage without any breaking changes towards `1.0`.
 
 ## Security and reliability
 
