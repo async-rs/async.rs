@@ -9,15 +9,15 @@ We are excited to announce a beta release of `async-std` with the intent to publ
 
 `async-std` is a library that looks and feels like the Rust standard library, except everything in it is made to work with `async`/`await` exactly as you would expect it to.
 
-The library comes with a [book][book] and polished [API documentation][documentation], and will soon provide a stable interface to base your async libraries and applications on. While we don't promise API stability before our `1.0` release, we also don't expect to make any breaking changes.
+The library comes with a [book][async-std-book] and polished [API documentation][async-std-api], and will soon provide a stable interface to base your async libraries and applications on. While we don't promise API stability before our `1.0` release, we also don't expect to make any breaking changes.
 
 ## Overview
 
 Consider the following code using blocking filesystem APIs to read from a file:
 
 ```rust
-use std::io::{self, Read};
 use std::fs::File;
+use std::io::{self, Read};
 
 fn read_file(path: &str) -> io::Result<String> {
     let mut file = File::open(path)?;
@@ -30,8 +30,8 @@ fn read_file(path: &str) -> io::Result<String> {
 To make `read_file` asynchronous, it would be great if we could just sprinkle the code with `async`/`await` keywords where appropriate. That kind of experience is exactly what `async-std` offers:
 
 ```rust
-use async_std::io::{self, Read};
 use async_std::fs::File;
+use async_std::io::{self, Read};
 
 async fn read_file(path: &str) -> io::Result<String> {
     let mut file = File::open(path).await?;
@@ -41,7 +41,7 @@ async fn read_file(path: &str) -> io::Result<String> {
 }
 ```
 
-Another interesting highlight is the [task][task-module] module, providing an interface that feels similar to the `thread` module from the standard library. Running a concurrent task using `async-std` is as easy as spawning a thread:
+Another interesting highlight is the [task][tasks-book] module, providing an interface that feels similar to the [`thread`][std-thread] module from the standard library. Running a concurrent task using `async-std` is as easy as spawning a thread:
 
 ```rust
 use async_std::task;
@@ -148,3 +148,4 @@ Finally, thanks to [Ferrous Systems][ferrous-systems] for funding this project! 
 [ferrous-systems]: https://ferrous-systems.com
 [good-first-issues]: https://github.com/async-rs/async-std/issues?q=is%3Aopen+is%3Aissue+no%3Amilestone+label%3A%22good+first+issue%22
 [discord]: https://discord.gg/JvZeVNe
+[std-thread]: https://doc.rust-lang.org/std/thread/index.html
