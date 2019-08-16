@@ -120,7 +120,7 @@ During our beta period, we will relase a new patch version for API extensions an
 
 We use a small number of well-vetted and checked dependencies, implementing all the core primitives `async-std` needs.
 
-## Authors and community
+## Community involvement
 
 `async-std` was developed by [Stjepan Glavina](https://github.com/stjepang) in collaboration with [Yoshua Wuyts](https://github.com/yoshuawuyts) and reuses many ideas from [`crossbeam`](https://github.com/crossbeam-rs/crossbeam) that have been successful in the area of concurrency throughout the Rust ecosystem.
 
