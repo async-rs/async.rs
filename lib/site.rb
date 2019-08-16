@@ -46,7 +46,7 @@ module Site
     end
 
     def ci_badge
-      "https://img.shields.io/travis/async-std/#{name}/master.svg?style=flat"
+      "https://img.shields.io/travis/async-rs/#{name}/master.svg?style=flat"
     end
 
     def api_url
