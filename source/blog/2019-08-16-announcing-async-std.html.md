@@ -122,7 +122,7 @@ We use a small number of well-vetted and checked libraries, implementing all the
 
 ## Authors and community
 
-`async-std` was developed by [Stjepan Glavina](https://github.com/stjepang) in collaboration with [Yoshua Wuyts](https://github.com/yoshuawuyts) and reuses many ideas from [`crossbeam`](https://github.com/yoshuawuyts) that have been successful in the area of concurrency throughout the Rust ecosystem.
+`async-std` was developed by [Stjepan Glavina](https://github.com/stjepang) in collaboration with [Yoshua Wuyts](https://github.com/yoshuawuyts) and reuses many ideas from [`crossbeam`](https://github.com/crossbeam-rs/crossbeam) that have been successful in the area of concurrency throughout the Rust ecosystem.
 
 It is designed and implemented with feedback from the industry and open source community. Now that the library is finally published, we'd like to welcome broader community of contributors. Over the next few weeks, we need work with testing, filling in remaining gaps in the API, and writing more documentation. Examples and experience reports are also very welcome!
 
