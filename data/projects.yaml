@@ -4,6 +4,8 @@
 -
   name: async-task
   api_url: https://docs.rs/async-task
--
-  name: async-tls
-  api_url: https://docs.rs/async-tls
+# To whomever ventures here: async-tls is in planning
+# and to be released soon.
+#-
+#  name: async-tls
+#  api_url: https://docs.rs/async-tls
