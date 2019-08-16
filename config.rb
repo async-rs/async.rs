@@ -139,7 +139,7 @@ helpers do
      *next_vs]
   end
 
-  GH_NEW_ISSUE_URL = "https://github.com/async-std/async-rs/issues/new?labels=%{labels}&assignees=%{assignees}&title=%{title}".freeze
+  GH_NEW_ISSUE_URL = "https://github.com/async-rs/async.rs/issues/new?labels=%{labels}&assignees=%{assignees}&title=%{title}".freeze
   def feedback_link
     tokens = {
       title: "Feedback on #{URI.encode(head_title)}",
@@ -150,7 +150,7 @@ helpers do
     link_to "Provide feedback!", GH_NEW_ISSUE_URL % tokens, class: "button"
   end
 
-  GH_EDIT_FILE_URL = "https://github.com/async-std/async.rs/blob/master%{current_path}".freeze
+  GH_EDIT_FILE_URL = "https://github.com/async-rs/async.rs/blob/master%{current_path}".freeze
   def edit_file_link
     link_to "Edit on GitHub", GH_EDIT_FILE_URL % { current_path: current_source_file}, class: "button"
   end

@@ -13,7 +13,7 @@ Feel free to send content pull requests without building the page, if you don't 
 
 Changes to the book should directly go to [async-std][async-std].
 
-[async-std]: https://github.com/async-std/async-std
+[async-std]: https://github.com/async-rs/async-std
 
 ## Build Instructions
 

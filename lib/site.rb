@@ -30,7 +30,7 @@ module Site
     alias_method :to_s, :name
 
     def github_url
-      "https://github.com/async-std/#{name}"
+      "https://github.com/async-rs/#{name}"
     end
 
     def docsrs_url
