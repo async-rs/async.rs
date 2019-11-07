@@ -1,6 +1,6 @@
 ---
 title: "async-std 0.9.12: async/.await is ready!"
-date: 2019-11-08
+date: 2019-11-07
 tags: release,announcement
 author: "Florian Gilcher"
 ---
