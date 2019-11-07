@@ -48,7 +48,7 @@ fn main() {
 
 The `JoinHandle` makes it easy to spawn tasks and retrieve their results in a uniform fashion. Also, every spawned task is stored within a single allocation, making this process is quick and efficient.
 
-See the `[task](https://docs.rs/async-std/latest/async_std/task/index.html)` module for more details.
+See the [`task`](https://docs.rs/async-std/latest/async_std/task/index.html) module for more details.
 
 ## Current Status
 
@@ -56,7 +56,7 @@ See the `[task](https://docs.rs/async-std/latest/async_std/task/index.html)` mod
 
 A lot of time has been spent in proper integration into the current futures library, so that you can use both the direct `async-std` interface and the `futures-rs` common traits to interact with `async-std`.
 
-We have moved a number of newer features under the feature flag `unstable`, which acts as a stability gate similar to the `#![feature(…)]` attribute used in nightly versions of Rust’s standard library. One of those features is a very fast implementation of MPMC (Multiple Sender Multiple Receiver) channels, which will cover most usecases people might have. We’re still taking feedback on their interface.
+We have moved a number of newer features under the feature flag `unstable`, which acts as a stability gate similar to the `#![feature(…)]` attribute used in nightly versions of Rust’s standard library. One of those features is a very fast implementation of [MPMC (Multiple Sender Multiple Receiver) channels](https://docs.rs/async-std/latest/async_std/sync/fn.channel.html), which will cover most usecases people might have. We’re still taking feedback on their interface.
 
 We feel confident about the release and the stability promised it brings. The `1.0` version covers all important parts to build an async system.
 
