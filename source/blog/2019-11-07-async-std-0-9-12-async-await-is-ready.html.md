@@ -17,11 +17,11 @@ Today, we will release `async-std` `0.9.12`, a final point release for you to pl
 
 `async-std` is an easy to use, well-documented library that provides an interface very close to Rust’s standard library. It provides implementations of all important I/O types like `TcpListener`, `File` and others. It is compatible with all libraries that are using `futures-rs` as their library interface.
 
-In practice, that means that `async_std::``stream::``Stream` can be used anywhere a `futures::``stream::``Stream` is expected and all I/O types can be used anywhere `AsyncRead` and `AsyncWrite` are expected.
+In practice, that means that `async_std::stream::Stream` can be used anywhere a `futures::stream::Stream` is expected and all I/O types can be used anywhere `AsyncRead` and `AsyncWrite` are expected.
 
 `async-std` provides [a book to learn the finer details and background](https://book.async.rs), which we will keep continuously expanding. It supplements [the official async book](https://rust-lang.github.io/async-book/).
 
-On top of that, `async-std` make spawning tasks as easy as possible. For example, `async-std` unifies blocking and non-blocking tasks in the `async``_``std::task` module under an interface similar to `std::thread``::``JoinHandle`.
+On top of that, `async-std` make spawning tasks as easy as possible. For example, `async-std` unifies blocking and non-blocking tasks in the `async_std::task` module under an interface similar to `std::thread::JoinHandle`.
 
 ```rust
 use async_std::task;
