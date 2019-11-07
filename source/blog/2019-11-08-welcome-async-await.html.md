@@ -5,8 +5,6 @@ tags: release,announcement
 author: "Florian Gilcher"
 ---
 
-# async/.await is ready!
-
 Today marks the release of Rust 1.39, with a finally ready `async/.await` feature.
 
 In our [announcement blog post](https://async.rs/blog/announcing-async-std/), we communicated our intent to ship `async-std` on the release day of this feature. We will miss this deadline by a few days, but give you a short roadmap here.
