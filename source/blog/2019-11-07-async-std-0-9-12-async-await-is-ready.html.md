@@ -30,11 +30,11 @@ use std::time::Duration;
 
 fn main() {
      task::block_on(async {
-         let tasks: Vec<task::JoinHandle<()>> = vec![];
-         let task = task::spawn(move {
+         let mut tasks: Vec<task::JoinHandle<()>> = vec![];
+         let task = task::spawn(async {
              task::sleep(Duration::from_millis(1000)).await;
          });
-         let blocking = task::spawn_blocking(move {
+         let blocking = task::spawn_blocking(|| {
              thread::sleep(Duration::from_millis(1000));
          });
          tasks.push(task);
@@ -45,6 +45,8 @@ fn main() {
      });
 }
 ```
+
+_Note_: This examples still needs the `unstable` feature of the library.
 
 The `JoinHandle` makes it easy to spawn tasks and retrieve their results in a uniform fashion. Also, every spawned task is stored within a single allocation, making this process quick and efficient.
 
