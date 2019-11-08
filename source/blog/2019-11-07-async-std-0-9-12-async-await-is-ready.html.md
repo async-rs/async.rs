@@ -21,7 +21,7 @@ In practice, that means that `async_std::stream::Stream` can be used anywhere a 
 
 `async-std` provides [a book to learn the finer details and background](https://book.async.rs), which we will keep continuously expanding. It supplements [the official async book](https://rust-lang.github.io/async-book/).
 
-On top of that, `async-std` make spawning tasks as easy as possible. For example, `async-std` unifies blocking and non-blocking tasks in the `async_std::task` module under an interface similar to `std::thread::JoinHandle`.
+On top of that, `async-std` makes spawning tasks as easy as possible. For example, `async-std` unifies blocking and non-blocking tasks in the `async_std::task` module under an interface similar to `std::thread::JoinHandle`.
 
 ```rust
 use async_std::task;
@@ -46,19 +46,19 @@ fn main() {
 }
 ```
 
-The `JoinHandle` makes it easy to spawn tasks and retrieve their results in a uniform fashion. Also, every spawned task is stored within a single allocation, making this process is quick and efficient.
+The `JoinHandle` makes it easy to spawn tasks and retrieve their results in a uniform fashion. Also, every spawned task is stored within a single allocation, making this process quick and efficient.
 
 See the [`task`](https://docs.rs/async-std/latest/async_std/task/index.html) module for more details.
 
 ## Current Status
 
-`async-std` has been mainly focused on stabilising and trying out its interface over the last couple of months. We have used the time to gather confidence in out concept of the port of Rust’s `std` to the async world.
+`async-std` has been mainly focused on stabilising and trying out its interface over the last couple of months. We have used the time to gather confidence in our concept of the port of Rust’s `std` to the async world.
 
 A lot of time has been spent in proper integration into the current futures library, so that you can use both the direct `async-std` interface and the `futures-rs` common traits to interact with `async-std`.
 
 We have moved a number of newer features under the feature flag `unstable`, which acts as a stability gate similar to the `#![feature(…)]` attribute used in nightly versions of Rust’s standard library. One of those features is a very fast implementation of [MPMC (Multiple Sender Multiple Receiver) channels](https://docs.rs/async-std/latest/async_std/sync/fn.channel.html), which will cover most usecases people might have. We’re still taking feedback on their interface.
 
-We feel confident about the release and the stability promised it brings. The `1.0` version covers all important parts to build an async system.
+We feel confident about the release and the stability promises it brings. The `1.0` version covers all important parts to build an async system.
 
 ## Meet us at RustFest!
 
