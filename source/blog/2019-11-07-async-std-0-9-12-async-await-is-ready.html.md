@@ -9,7 +9,7 @@ Today marks the release of Rust 1.39, with a finally ready `async/.await` featur
 
 In our [announcement blog post](https://async.rs/blog/announcing-async-std/), we communicated our intent to ship `async-std` on the release day of this feature. We will miss this deadline by a few days, but give you a short roadmap here.
 
-The delay is caused by the `futures-rs` library, which we depend on, making their final release yesterday. We highly respect `futures-rs` timeline, the time was well spend in release polish and we congratulate the team to their release! Still, this means that we will release `async-std` a little later, to also give ourselves time for quality control and release polish. The current release date is `Monday, November 11th`.
+The delay is caused by the `futures-rs` library, which we depend on, making their final release yesterday. We highly respect `futures-rs` timeline, the time was well spent in release polish and we congratulate the team to their release! Still, this means that we will release `async-std` a little later, to also give ourselves time for quality control and release polish. The current release date is `Monday, November 11th`.
 
 Today, we will release `async-std` `0.9.12`, a final point release for you to play around with the new `async/.await` feature.
 
@@ -52,7 +52,7 @@ See the [`task`](https://docs.rs/async-std/latest/async_std/task/index.html) mod
 
 ## Current Status
 
-`async-std` has been mainly focused on stabilising and trying out its interface over the last couple of months. We have used the time to gather confidence in out concept of the port of Rust’s `std` to the async world.
+`async-std` has been mainly focused on stabilising and trying out its interface over the last couple of months. We have used the time to gather confidence in our concept of the port of Rust’s `std` to the async world.
 
 A lot of time has been spent in proper integration into the current futures library, so that you can use both the direct `async-std` interface and the `futures-rs` common traits to interact with `async-std`.
 
