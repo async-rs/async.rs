@@ -1,5 +1,5 @@
 ---
-title: "async-std 0.9.12: async/.await is ready!"
+title: "async-std 0.99.12: async/.await is ready!"
 date: 2019-11-07
 tags: release,announcement
 author: "Florian Gilcher"
@@ -11,7 +11,7 @@ In our [announcement blog post](https://async.rs/blog/announcing-async-std/), we
 
 The delay is caused by the `futures-rs` library, which we depend on, making their final release yesterday. We highly respect `futures-rs` timeline, the time was well spend in release polish and we congratulate the team to their release! Still, this means that we will release `async-std` a little later, to also give ourselves time for quality control and release polish. The current release date is `Monday, November 11th`.
 
-Today, we will release `async-std` `0.9.12`, a final point release for you to play around with the new `async/.await` feature.
+Today, we will release `async-std` `0.99.12`, a final point release for you to play around with the new `async/.await` feature.
 
 ## The best way to try `futures-rs`
 
@@ -29,20 +29,20 @@ use std::thread;
 use std::time::Duration;
 
 fn main() {
-     task::block_on(async {
-         let mut tasks: Vec<task::JoinHandle<()>> = vec![];
-         let task = task::spawn(async {
-             task::sleep(Duration::from_millis(1000)).await;
-         });
-         let blocking = task::spawn_blocking(|| {
-             thread::sleep(Duration::from_millis(1000));
-         });
-         tasks.push(task);
-         tasks.push(blocking);
-         for task in tasks {
-             task.await
-         }
-     });
+    task::block_on(async {
+        let mut tasks: Vec<task::JoinHandle<()>> = vec![];
+        let task = task::spawn(async {
+            task::sleep(Duration::from_millis(1000)).await;
+        });
+        let blocking = task::spawn_blocking(|| {
+            thread::sleep(Duration::from_millis(1000));
+        });
+        tasks.push(task);
+        tasks.push(blocking);
+        for task in tasks {
+            task.await
+        }
+    });
 }
 ```
 
