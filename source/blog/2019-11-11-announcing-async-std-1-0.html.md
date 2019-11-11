@@ -99,7 +99,7 @@ fn main() -> io::Result<()> {
 }
 ```
 
-The `JoinHandle` makes it easy to spawn tasks and retrieve their results in a uniform fashion. Also, it every task allocates in one go, this process is quick and efficient. `JoinHandle`s themselves are future-based, so you can use the for directly waiting for task completion.
+The `JoinHandle` makes it easy to spawn tasks and retrieve their results in a uniform fashion. Also, it allocates every task in one go, this process is quick and efficient. `JoinHandle`s themselves are future-based, so you can use them for directly waiting for task completion.
 
 ### Futures-aware sync module
 
