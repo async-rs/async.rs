@@ -37,6 +37,14 @@ The Rust async ecosystem has been in flux and has seen a lot of churn during the
 
 `async-std` does not compromise on speed by shipping a fast executor that will be constantly improving over time and tweaked with incoming production  feedback. `async-std`'s goal is to ship an executor that gives great performance out of the box without the need for tuning.
 
+## Stability guarantees
+
+What does 1.0 mean? It means that all API that is not feature gated is now publicly committed and documented. Users are encouraged to use it liberally. We will continue to add features in additional releases over the coming week.
+
+These improvements will follow familiar patterns: a period of being feature gated through the `unstable` feature and then stabilisation.
+
+Due to language changes coming down the line (mostly async closures and async streams), there is a high likeliness of a 2.0 release in the future. In this case, the 1.0 line will continue being maintained for security and bug fixes and porting documents and guidelines will be provided.
+
 ## Highlights of async-std
 
 ### Easy to get started
@@ -124,77 +132,6 @@ We also offer a [book](https://book.async.rs), which we will continuously expand
 `async-std` relies on `futures-rs` for interfacing with other libraries and components. `async-std` re-exports traits `Stream`, `AsyncRead`, `AsyncWrite`, `AsyncSeek` in its standard interface. It fully relies on `futures-rs` to define its types.
 
 All `async-std` types can be used both directly as well as through the generic interfaces, making it play well with the general ecosystem. For an example of how library development on `async-std` could look like, have a look at `[async-tls](https://github.com/async-rs/async-tls)`, a TLS library that works with any `futures-rs`-compatible library.
-
-## Outlook
-
-We want to spend the next few weeks with the following tasks:
-
-- Holidays
-- Stabilizing unstable APIs at a regular cadence
-- Fill remaining API gaps
-- Extending the book, especially around general usage patterns
-- Starting to work on additional ecosystem libraries, for example `async-tls`.
-
-You can expect more down the road soon:
-
-- documentation on how to write *libraries* on top of *async-std* that are compatible with the wider ecosystem
-- documentation on how to write *applications* with *async-std*
-- a coming web development story
-
-## Upcoming Features
-
-Many teasing new features are currently behind the `unstable` feature gate. They are mainly there for final API review, and can be used in production.
-
-### Fast channels
-
-`async-std` implements fast async MPMC (Multiple Producer, Multiple Consumer) channels based on the experience gained in `crossbeam`.
-
-```rust
-use std::time::Duration;
-
-use async_std::sync::channel;
-use async_std::task;
-
-let (s, r) = channel(1);
-
-// This call returns immediately because there is enough space in the channel.
-s.send(1).await;
-
-task::spawn(async move {
-    // This call will have to wait because the channel is full.
-    // It will be able to complete only after the first message is received.
-    s.send(2).await;
-});
-
-task::sleep(Duration::from_secs(1)).await;
-assert_eq!(r.recv().await, Some(1));
-assert_eq!(r.recv().await, Some(2));
-```
-
-MPMC channels solve all important use cases naturally, particularly also multiple producer, single consumer use-cases.
-
-All `async-std` channels are *bounded*, which means the sender has to wait with sending if the channel is over capacity, leading to natural backpressure handling.
-
-### More task spawning APIs
-
-The task module is currently gaining the `spawn_blocking` and `yield_now` functions.
-
-[`spawn_blocking`](https://docs.rs/async-std/latest/async_std/task/fn.spawn_blocking.html) allows you to spawn tasks which are known to be blocking the currently running thread (which is the current executor thread).
-
-[`yield_now`](https://docs.rs/async-std/latest/async_std/task/fn.yield_now.html) allows long running computations to actively interrupt themselves during execution, giving up time to other concurrent tasks cooperatively.
-
-## Recognition
-
-Since our release, we had 59 people contributing code, documentation fixes and examples to `async-std`. We want to specifically highlight some of them:
-
-
-- [taiki-e](https://github.com/taiki-e)  for keeping dependencies up to date, setting up continuous integration, and writing amazing crates like pin-project that make writing async libraries so much easier
-- [k-nasa](https://github.com/taiki-e) for work contributing stream combinators and a lot of other pull requests
-- [montekki](https://github.com/montekki) for implementing stream combinators and bringing `Stream` close to parity with `Iterator`
-- [zkat](https://github.com/zkat) for early testing, benchmarks, advice, and `cacache`, the first library written on top of `async-std`
-
-
-Thank you!
 
 ## Benchmarks
 
@@ -284,13 +221,25 @@ We present these benchmarks to illustrate that `async-std` does not compromise i
 
 Note that these are microbenchmarks and should always be checked against behaviour in your actual application. For example, an application with low contention on mutexes will not benefit from their performance.
 
-## Stability guarantees
 
-What does 1.0 mean? It means that all API that is not feature gated is now publicly committed and documented. Users are encouraged to use it liberally. We will continue to add features in additional releases over the coming week.
 
-These improvements will follow familiar patterns: a period of being feature gated through the `unstable` feature and then stabilisation.
 
-Due to language changes coming down the line (mostly async closures and async streams), there is a high likeliness of a 2.0 release in the future. In this case, the 1.0 line will continue being maintained for security and bug fixes and porting documents and guidelines will be provided.
+## Recognition
+
+Since our release, we had 59 people contributing code, documentation fixes and examples to `async-std`. We want to specifically highlight some of them:
+
+
+- [taiki-e](https://github.com/taiki-e)  for keeping dependencies up to date, setting up continuous integration, and writing amazing crates like pin-project that make writing async libraries so much easier
+- [k-nasa](https://github.com/taiki-e) for work contributing stream combinators and a lot of other pull requests
+- [montekki](https://github.com/montekki) for implementing stream combinators and bringing `Stream` close to parity with `Iterator`
+- [zkat](https://github.com/zkat) for early testing, benchmarks, advice, and `cacache`, the first library written on top of `async-std`
+- [sunjay](https://github.com/sunjay) for authoring almost 60 `FromStream` implementations, making our `collect` method as easy to use as `std`'s.
+- [Wassasin](https://github.com/wassasin) for work on streams and implementing the `path` module.
+- [dignifiedquire](https://github.com/dignifiedquire/) for early testing, continuous feedback, implementing some async trait methods, as well as core async primitives such as `Barrier`.
+- [felipesere](http://github.com/felipesere) for their work on stream adapters.
+- [yjhmelody](http://yjhmelody) for their work on stream adapters.
+
+Thank you! ❤
 
 ## Funding
 
@@ -298,3 +247,60 @@ Due to language changes coming down the line (mostly async closures and async st
 
 To allow for further growth and sustainability, we have an offer out on [OpenCollective](https://opencollective.com/async-rs/).
 
+## Upcoming Features
+
+Many teasing new features are currently behind the `unstable` feature gate. They are mainly there for final API review, and can be used in production.
+
+### Fast channels
+
+`async-std` implements fast async MPMC (Multiple Producer, Multiple Consumer) channels based on the experience gained in `crossbeam`.
+
+```rust
+use std::time::Duration;
+
+use async_std::sync::channel;
+use async_std::task;
+
+let (s, r) = channel(1);
+
+// This call returns immediately because there is enough space in the channel.
+s.send(1).await;
+
+task::spawn(async move {
+    // This call will have to wait because the channel is full.
+    // It will be able to complete only after the first message is received.
+    s.send(2).await;
+});
+
+task::sleep(Duration::from_secs(1)).await;
+assert_eq!(r.recv().await, Some(1));
+assert_eq!(r.recv().await, Some(2));
+```
+
+MPMC channels solve all important use cases naturally, particularly also multiple producer, single consumer use-cases.
+
+All `async-std` channels are *bounded*, which means the sender has to wait with sending if the channel is over capacity, leading to natural backpressure handling.
+
+### More task spawning APIs
+
+The task module is currently gaining the `spawn_blocking` and `yield_now` functions.
+
+[`spawn_blocking`](https://docs.rs/async-std/latest/async_std/task/fn.spawn_blocking.html) allows you to spawn tasks which are known to be blocking the currently running thread (which is the current executor thread).
+
+[`yield_now`](https://docs.rs/async-std/latest/async_std/task/fn.yield_now.html) allows long running computations to actively interrupt themselves during execution, giving up time to other concurrent tasks cooperatively.
+
+## Outlook
+
+We want to spend the next few weeks with the following tasks:
+
+- Holidays
+- Stabilizing unstable APIs at a regular cadence
+- Fill remaining API gaps
+- Extending the book, especially around general usage patterns
+- Starting to work on additional ecosystem libraries, for example `async-tls`.
+
+You can expect more down the road soon:
+
+- documentation on how to write *libraries* on top of *async-std* that are compatible with the wider ecosystem
+- documentation on how to write *applications* with *async-std*
+- a coming web development story
