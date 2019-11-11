@@ -1,6 +1,6 @@
 ---
 title: "Announcing async-std 1.0"
-date: 2019-11-10
+date: 2019-11-11
 tags: release,announcement,party
 author: "Florian Gilcher"
 published: true
