@@ -39,7 +39,7 @@ The Rust async ecosystem has been in flux and has seen a lot of churn during the
 
 ## Stability guarantees
 
-What does 1.0 mean? It means that all API that is not feature gated is now publicly committed and documented and users are encouraged to rely on its stability. We will continue to add features in following releases over the coming week.
+What does 1.0 mean? It means that all API that is not feature gated is now publicly committed and documented and users are encouraged to rely on its stability. We will continue to add features in following releases over the coming weeks.
 
 These improvements will follow familiar patterns: a period of being feature gated through the `unstable` feature and then stabilisation.
 
@@ -99,7 +99,7 @@ fn main() -> io::Result<()> {
 }
 ```
 
-The `JoinHandle` makes it easy to spawn tasks and retrieve their results in a uniform fashion. Also, it every task allocates in one go, this process is quick and efficient. `JoinHandle`s themselves are future-based, so you can use the for directly waiting for task completion.
+The `JoinHandle` makes it easy to spawn tasks and retrieve their results in a uniform fashion. Also, every task allocates in one go, this process is quick and efficient. `JoinHandle`s themselves are future-based, so you can use the for directly waiting for task completion.
 
 ### Futures-aware sync module
 
