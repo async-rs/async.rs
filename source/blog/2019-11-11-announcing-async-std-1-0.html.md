@@ -35,15 +35,15 @@ The Rust async ecosystem has been in flux and has seen a lot of churn during the
 
 ### Speed
 
-`async-std` does not compromise on speed by shipping a fast executor that will be constantly improving over time and tweaked with incoming production  feedback. `async-std`'s goal is to ship an executor that gives great performance out of the box without the need for tuning.
+`async-std` does not compromise on speed by shipping a fast executor that will be constantly improving over time and tweaked with incoming production feedback. `async-std`'s goal is to ship an executor that gives great performance out of the box without the need for tuning.
 
 ## Stability guarantees
 
-What does 1.0 mean? It means that all API that is not feature gated is now publicly committed and documented. Users are encouraged to use it liberally. We will continue to add features in additional releases over the coming week.
+What does 1.0 mean? It means that all API that is not feature gated is now publicly committed and documented and users are encouraged rely on its stability. We will continue to add features in following releases over the coming week.
 
 These improvements will follow familiar patterns: a period of being feature gated through the `unstable` feature and then stabilisation.
 
-Due to language changes coming down the line (mostly async closures and async streams), there is a high likeliness of a 2.0 release in the future. In this case, the 1.0 line will continue being maintained for security and bug fixes and porting documents and guidelines will be provided.
+Due to language changes coming down the line (mostly async closures and async streams), there is a high likeliness of a 2.0 release in the future. In this case, the 1.0 line will continue being maintained while we'll provide upgrade instructions for smooth transition.
 
 ## Highlights of async-std
 
@@ -89,13 +89,13 @@ use async_std::task::{self, JoinHandle};
 use std::time::Duration;
 
 fn main() -> io::Result<()> {
-        task::block_on(async {
-            let checking: JoinHandle<()> = task::spawn(async {
-                task::sleep(Duration::from_millis(1000)).await;
-            });
-
-            checking.await?;
+    task::block_on(async {
+        let checking: JoinHandle<()> = task::spawn(async {
+            task::sleep(Duration::from_millis(1000)).await;
         });
+
+        checking.await?;
+    });
 }
 ```
 
@@ -292,6 +292,6 @@ In this post, we have presented the ergonomics and performance characteristics o
 - Extending the book, especially around general usage patterns
 - Starting to work on additional ecosystem libraries, for example `async-tls`
 
-`async-std` is funded by [Ferrous Systems](https://ferrous-systems.com) and [Yoshua Wuyts](https://blog.yoshuawuyts.com) personally. To allow for further growth and sustainability, we have an offer out on [OpenCollective](https://opencollective.com/async-rs/).
+`async-std` is funded by [Ferrous Systems](https://ferrous-systems.com) and [Yoshua Wuyts](https://blog.yoshuawuyts.com) personally. ​If you'd like to support further development and keep it sustainable, we have an [OpenCollective page](https://opencollective.com/async-rs/). Thank you!
 
 We're incredibly happy to bring `async-std` to stability. We hope you enjoy building on top of it as much as we enjoyed building it! `async-std` is a step forward for `async/.await` ergonomics in Rust and enables you to build both fast and maintainable asynchronous Rust programs.
