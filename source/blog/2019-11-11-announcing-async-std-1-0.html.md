@@ -39,7 +39,7 @@ The Rust async ecosystem has been in flux and has seen a lot of churn during the
 
 ## Stability guarantees
 
-What does 1.0 mean? It means that all API that is not feature gated is now publicly committed and documented and users are encouraged rely on its stability. We will continue to add features in following releases over the coming week.
+What does 1.0 mean? It means that all API that is not feature gated is now publicly committed and documented and users are encouraged to rely on its stability. We will continue to add features in following releases over the coming week.
 
 These improvements will follow familiar patterns: a period of being feature gated through the `unstable` feature and then stabilisation.
 
