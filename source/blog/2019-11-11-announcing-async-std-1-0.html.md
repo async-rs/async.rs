@@ -208,14 +208,18 @@ yield_many     7,640,958          3,919,748            x 1.95
 
 `async-std` is up to twice as fast as `tokio` when spawning tasks.
 
-You can find the benchmark sources here: https://github.com/stjepang/tokio/
+You can find the benchmark sources here: https://github.com/matklad/tokio/
 
 Run them using:
 
 ```
-$ cargo bench --bench tokio
-$ cargo bench --bench async-std
+$ cargo bench --bench thread_pool
+$ cargo bench --bench async_std
 ```
+
+> NOTE: There were originally build issues with the branch of tokio used for these benchmarks. The repository has been updated,
+> and a git tag labelled `async-std-1.0-bench` has been added capturing a specific nightly toolchain and `Cargo.lock` of
+> dependencies used for reproduction
 
 ### Summary
 
