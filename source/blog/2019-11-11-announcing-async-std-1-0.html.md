@@ -213,6 +213,7 @@ You can find the benchmark sources here: https://github.com/matklad/tokio/
 Run them using:
 
 ```
+$ git checkout async-std-1.0-bench
 $ cargo bench --bench thread_pool
 $ cargo bench --bench async_std
 ```
