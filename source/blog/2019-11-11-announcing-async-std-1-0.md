@@ -1,8 +1,9 @@
 ---
 title: "Announcing async-std 1.0"
-date: 2019-11-11 00:00
+date: 2019-11-11
 tags: release,announcement,party
 author: "Florian Gilcher"
+published: true
 ---
 
 `async-std` is a port of Rust’s standard library to the async world. It comes with a fast runtime and is a pleasure to use.
