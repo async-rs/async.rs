@@ -131,7 +131,7 @@ We also offer a [book](https://book.async.rs), which we will continuously expand
 
 `async-std` relies on `futures-rs` for interfacing with other libraries and components. `async-std` re-exports traits `Stream`, `AsyncRead`, `AsyncWrite`, `AsyncSeek` in its standard interface. It fully relies on `futures-rs` to define its types.
 
-All `async-std` types can be used both directly as well as through the generic interfaces, making it play well with the general ecosystem. For an example of how library development on `async-std` could look like, have a look at `[async-tls](https://github.com/async-rs/async-tls)`, a TLS library that works with any `futures-rs`-compatible library.
+All `async-std` types can be used both directly as well as through the generic interfaces, making it play well with the general ecosystem. For an example of how library development on `async-std` could look like, have a look at [`async-tls`](https://github.com/async-rs/async-tls), a TLS library that works with any `futures-rs`-compatible library.
 
 ## Benchmarks
 
@@ -148,34 +148,7 @@ This benchmark is based on [jebrosen’s file benchmark](https://github.com/jebr
 
 `async-std` is roughly 1.6x faster than `tokio` on this particular benchmark.
 
-### Tasks benchmarks
 
-The benchmarks test the speed of:
-
-- Tasks spawning other tasks
-- Tasks sending a message back and forth
-- Spawning many tasks
-- Spawning a number of tasks and frequently waking them up and shutting them down
-
-```
-name           tokio.txt ns/iter  async_std.txt ns/iter speedup
-
-chained_spawn  123,921            119,706              x 1.04
-ping_pong      401,712            289,069              x 1.39
-spawn_many     5,326,354          3,149,276            x 1.69
-yield_many     7,640,958          3,919,748            x 1.95
-```
-
-`async-std` is up to twice as fast as `tokio` when spawning tasks.
-
-You can find the benchmark sources here: https://github.com/stjepang/tokio/
-
-Run them using:
-
-```
-$ cargo run --release --bin tokio
-$ cargo run --release --bin async-std
-```
 
 ### Mutex benchmarks
 
@@ -215,14 +188,40 @@ no_contention ... bench:     315,463 ns/iter (+/- 280,223)
 
 `async_std::sync::Mutex` is much faster under contention - at least 2x faster than all other implementations -  while keeping a similar performance to all competitors under no contention.
 
+### Task benchmarks
+
+The benchmarks test the speed of:
+
+- Tasks spawning other tasks
+- Tasks sending a message back and forth
+- Spawning many tasks
+- Spawning a number of tasks and frequently waking them up and shutting them down
+
+```
+name           tokio.txt ns/iter  async_std.txt ns/iter speedup
+
+chained_spawn  123,921            119,706              x 1.04
+ping_pong      401,712            289,069              x 1.39
+spawn_many     5,326,354          3,149,276            x 1.69
+yield_many     7,640,958          3,919,748            x 1.95
+```
+
+`async-std` is up to twice as fast as `tokio` when spawning tasks.
+
+You can find the benchmark sources here: https://github.com/stjepang/tokio/
+
+Run them using:
+
+```
+$ cargo run --release --bin tokio
+$ cargo run --release --bin async-std
+```
+
 ### Summary
 
 We present these benchmarks to illustrate that `async-std` does not compromise in performance. When it comes to the core primitives, `async-std` performance is as good or better than its competitors.
 
 Note that these are microbenchmarks and should always be checked against behaviour in your actual application. For example, an application with low contention on mutexes will not benefit from their performance.
-
-
-
 
 ## Recognition
 
@@ -240,12 +239,6 @@ Since our release, we had 59 people contributing code, documentation fixes and e
 - [yjhmelody](http://yjhmelody) for their work on stream adapters.
 
 Thank you! ❤
-
-## Funding
-
-`async-std` is funded by [Ferrous Systems](https://ferrous-systems.com) and [Yoshua Wuyts](https://blog.yoshuawuyts.com) personally.
-
-To allow for further growth and sustainability, we have an offer out on [OpenCollective](https://opencollective.com/async-rs/).
 
 ## Upcoming Features
 
@@ -289,18 +282,16 @@ The task module is currently gaining the `spawn_blocking` and `yield_now` functi
 
 [`yield_now`](https://docs.rs/async-std/latest/async_std/task/fn.yield_now.html) allows long running computations to actively interrupt themselves during execution, giving up time to other concurrent tasks cooperatively.
 
-## Outlook
+## Conclusion
 
-We want to spend the next few weeks with the following tasks:
+In this post, we have presented the ergonomics and performance characteristics of `async-std`, as well as its stability guarantees. We want to spend the next few weeks with the following tasks:
 
 - Holidays
 - Stabilizing unstable APIs at a regular cadence
 - Fill remaining API gaps
 - Extending the book, especially around general usage patterns
-- Starting to work on additional ecosystem libraries, for example `async-tls`.
+- Starting to work on additional ecosystem libraries, for example `async-tls`
 
-You can expect more down the road soon:
+`async-std` is funded by [Ferrous Systems](https://ferrous-systems.com) and [Yoshua Wuyts](https://blog.yoshuawuyts.com) personally. To allow for further growth and sustainability, we have an offer out on [OpenCollective](https://opencollective.com/async-rs/).
 
-- documentation on how to write *libraries* on top of *async-std* that are compatible with the wider ecosystem
-- documentation on how to write *applications* with *async-std*
-- a coming web development story
+We're incredibly happy to bring `async-std` to stability. We hope you enjoy building on top of it as much as we enjoyed building it! `async-std` is a step forward for `async/.await` ergonomics in Rust and enables you to build both fast and maintainable asynchronous Rust programs.
