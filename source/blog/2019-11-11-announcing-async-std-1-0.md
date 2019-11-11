@@ -187,10 +187,11 @@ The task module is currently gaining the `spawn_blocking` and `yield_now` functi
 Since our release, we had 59 people contributing code, documentation fixes and examples to `async-std`. We want to specifically highlight some of them:
 
 
-- [taiki-e](https://github.com/taiki-e) for work
-- [k-nasa](https://github.com/taiki-e) for work
-- [montek](https://github.com/taiki-e)[k](https://github.com/taiki-e)[i](https://github.com/taiki-e) (streams combinators)
-- [zkat](https://github.com/zkat) for benchmarks, advice, and cacache, the first full library on top of async-std
+- [taiki-e](https://github.com/taiki-e)  for keeping dependencies up to date, setting up continuous integration, and writing amazing crates like pin-project that make writing async libraries so much easier
+- [k-nasa](https://github.com/taiki-e) for work contributing stream combinators and a lot of other pull requests
+- [montekki](https://github.com/montekki) for implementing stream combinators and bringing `Stream` close to parity with `Iterator`
+- [zkat](https://github.com/zkat) for early testing, benchmarks, advice, and `cacache`, the first library written on top of `async-std`
+
 
 Thank you!
 
