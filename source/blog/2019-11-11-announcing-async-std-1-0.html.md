@@ -137,19 +137,6 @@ All `async-std` types can be used both directly as well as through the generic i
 
 Over the last weeks, we got a lot of requests for comparative benchmarks. We believe there is currently a hyperfocus on benchmarks over ergonomics and integration in some Rust spaces and don’t want to enter the benchmark game. Still, we think it is useful for people to know where we currently stand, which is why we wanted to publish some rough comparative numbers. Posting benchmarks usually leads to other projects improving theirs, so see those numbers as the ballpark we are playing in.
 
-**File reading**
-
-This benchmark is based on [jebrosen’s file benchmark](https://github.com/jebrosen/async-file-benchmark). We ran it on a 256k file:
-
-```
-- tokio: 0.136 sec
-- async_std: 0.086 sec
-```
-
-`async-std` is roughly 1.6x faster than `tokio` on this particular benchmark.
-
-
-
 ### Mutex benchmarks
 
 The speed of our concurrent structures can be tested against against a number of implementations. Please note that especially `futures-intrusive` gives some options, so we tested against a similarly tuned Mutex.
