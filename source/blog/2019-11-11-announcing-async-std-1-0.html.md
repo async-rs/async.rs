@@ -213,8 +213,8 @@ You can find the benchmark sources here: https://github.com/stjepang/tokio/
 Run them using:
 
 ```
-$ cargo run --release --bin tokio
-$ cargo run --release --bin async-std
+$ cargo bench --bench tokio
+$ cargo bench --bench async-std
 ```
 
 ### Summary
