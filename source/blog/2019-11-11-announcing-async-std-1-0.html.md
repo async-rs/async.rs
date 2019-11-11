@@ -103,7 +103,7 @@ The `JoinHandle` makes it easy to spawn tasks and retrieve their results in a un
 
 ### Futures-aware sync module
 
-`async-std` ships with a number of futures-aware types in the `[async_std::sync](https://docs.rs/async-std/latest/async_std/sync/index.html)` module. An example:
+`async-std` ships with a number of futures-aware types in the [`async_std::sync`](https://docs.rs/async-std/latest/async_std/sync/index.html) module. An example:
 
 ```rust
 use async_std::sync::{Arc, Mutex};
