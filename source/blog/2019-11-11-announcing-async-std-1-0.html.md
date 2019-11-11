@@ -276,7 +276,7 @@ All `async-std` channels are *bounded*, which means the sender has to wait with 
 
 ### More task spawning APIs
 
-The task module is currently gaining the `spawn_blocking` and `yield_now` functions.
+The task module is currently being extended with the `spawn_blocking` and `yield_now` functions.
 
 [`spawn_blocking`](https://docs.rs/async-std/latest/async_std/task/fn.spawn_blocking.html) allows you to spawn tasks which are known to be blocking the currently running thread (which is the current executor thread).
 
