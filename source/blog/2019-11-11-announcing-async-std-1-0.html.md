@@ -139,7 +139,7 @@ Over the last weeks, we got a lot of requests for comparative benchmarks. We bel
 
 ### Mutex benchmarks
 
-The speed of our concurrent structures can be tested against against a number of implementations. Please note that especially `futures-intrusive` gives some options, so we tested against a similarly tuned Mutex.
+The speed of our concurrent structures can be tested against a number of implementations. Please note that especially `futures-intrusive` gives some options, so we tested against a similarly tuned Mutex.
 
 `async_std::sync::Mutex`:
 
