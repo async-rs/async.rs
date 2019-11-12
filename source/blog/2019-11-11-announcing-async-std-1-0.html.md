@@ -221,14 +221,14 @@ Since our release, we had 59 people contributing code, documentation fixes and e
 
 
 - [taiki-e](https://github.com/taiki-e)  for keeping dependencies up to date, setting up continuous integration, and writing amazing crates like pin-project that make writing async libraries so much easier
-- [k-nasa](https://github.com/taiki-e) for work contributing stream combinators and a lot of other pull requests
+- [k-nasa](https://github.com/k-nasa) for work contributing stream combinators and a lot of other pull requests
 - [montekki](https://github.com/montekki) for implementing stream combinators and bringing `Stream` close to parity with `Iterator`
 - [zkat](https://github.com/zkat) for early testing, benchmarks, advice, and `cacache`, the first library written on top of `async-std`
 - [sunjay](https://github.com/sunjay) for authoring almost 60 `FromStream` implementations, making our `collect` method as easy to use as `std`'s.
 - [Wassasin](https://github.com/wassasin) for work on streams and implementing the `path` module.
-- [dignifiedquire](https://github.com/dignifiedquire/) for early testing, continuous feedback, implementing some async trait methods, as well as core async primitives such as `Barrier`.
-- [felipesere](http://github.com/felipesere) for their work on stream adapters.
-- [yjhmelody](http://yjhmelody) for their work on stream adapters.
+- [dignifiedquire](https://github.com/dignifiedquire) for early testing, continuous feedback, implementing some async trait methods, as well as core async primitives such as `Barrier`.
+- [felipesere](https://github.com/felipesere) for their work on stream adapters.
+- [yjhmelody](https://github.com/yjhmelody) for their work on stream adapters.
 
 Thank you! ❤
 
