@@ -108,3 +108,4 @@ The adaptive nature of the new runtime allows it to use *less* resources when mu
 
 All these changes make it easier to write async programs while *also* making them more efficient and reliable!
 
+We would like to thank [_all contributors to async-std_](https://github.com/async-rs/async-std/graphs/contributors), big and small, new and long-term and all the library authors building great stuff for the Rust async ecosystem!
