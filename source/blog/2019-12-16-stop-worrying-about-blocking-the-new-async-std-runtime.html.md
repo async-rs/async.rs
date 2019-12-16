@@ -87,7 +87,7 @@ The new runtime is faster in general and scales way better to take available res
 
 ## Small and well-documented
 
-The new runtime is small and well-documented. Please take a look at [the source](https://github.com/stjepang/async-std/tree/new-scheduler/src/rt) to see how it works. Feel free to ask questions on the PR! There are still plenty of optimization opportunities and we will continue to blog about those details!
+The new runtime is small, uses no `unsafe` and is documented. Please take a look at [the source](https://github.com/stjepang/async-std/tree/new-scheduler/src/rt) to see how it works. Feel free to ask questions on the PR! There are still plenty of optimization opportunities and we will continue to blog about those details!
 
 ## Trying it out
 
