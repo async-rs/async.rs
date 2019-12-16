@@ -102,7 +102,7 @@ Please report on your experiences - and report potential bugs!
 
 ## Summary
 
-The new `async-std` runtime relieves programmers of the burden of isolating blocking code from async code. You simply don’t have to worry about it any more.
+The new `async-std` runtime relieves programmers of the burden of isolating blocking code from async code. You simply don’t have to worry about it anymore.
 
 The adaptive nature of the new runtime allows it to use *less* resources when multithreading does not bring any benefit. This improves performance in CLI tools and lowers the latency in web servers. At the same time, the runtime will scale up to use all available resources during intense workloads.
 
