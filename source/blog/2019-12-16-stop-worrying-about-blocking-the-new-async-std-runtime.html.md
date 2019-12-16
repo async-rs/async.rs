@@ -58,7 +58,7 @@ async fn read_to_string(path: impl AsRef<Path>) -> io::Result<String> {
 
 The runtime measures the time it takes to perform the blocking operation and if it takes a while, a new thread is automatically spawned and replaces the old executor thread. That way, only the current task is blocked on the operation rather than the whole executor thread or the whole runtime. If the blocking operation is quick, we don’t spawn a new thread and therefore no additional cost is inflicted.
 
-If you still want to make sure the operation runs in the background and doesn’t block the current task either, you can *still* simply spawn a regular task and do the blocking work inside it:
+If you *still* want to make sure the operation runs in the background and doesn’t block the current task either, you can simply spawn a regular task and do the blocking work inside it:
 
 ```rust
 async fn read_to_string(path: impl AsRef<Path>) -> io::Result<String> {
