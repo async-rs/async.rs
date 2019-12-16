@@ -94,7 +94,7 @@ The new runtime is small, uses no `unsafe` and is documented. Please take a look
 To try out the new scheduler before release, modify your `Cargo.toml` this way:
 
 ```toml
-async-std = { git = 'https://github.com/async-rs/async-std', branch = 'new-scheduler' }
+async-std = { git = 'https://github.com/stjepang/async-std', branch = 'new-scheduler' }
 ```
 
 Please report on your experiences - and report potential bugs!
