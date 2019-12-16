@@ -5,7 +5,7 @@ tags: release,announcement,christmas
 author: "Stjepan Glavina"
 ---
 
-`async-std` is a port of the Rust standard library to its new `async/await` world, designed to make async programming easy, efficient, worry- and error-free.
+`async-std` is a mature and stable port of the Rust standard library to its new `async/await` world, designed to make async programming easy, efficient, worry- and error-free.
 
 We announced [async-std](https://async.rs/) on August 16th - exactly 4 month ago. Our focus for the initial release was providing a stable and reliable API for users to build async applications on, modelled after Rust standard library. It came with a number of innovative implementations: The first implementation of a `JoinHandle` based task API and single-allocation tasks.
 
