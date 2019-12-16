@@ -16,7 +16,7 @@ In summary:
 - The new runtime is **really fast** and outperforms the old one.
 - The new runtime is **universal** in the sense that it adapts to different workloads automatically, becoming single-threaded or multi-threaded on demand. If a single thread can handle all the work, we don’t pay the price of work-stealing.
 - The new runtime is **conceptually simpler**, by removing the split between the non-blocking and the blocking threadpool.
-- The new runtime **detects blocking** automatically. We don’t need `[spawn_blocking](https://docs.rs/async-std/1.2.0/async_std/task/fn.spawn_blocking.html)` anymore and can simply deprecate it.
+- The new runtime **detects blocking** automatically. We don’t need [`spawn_blocking`](https://docs.rs/async-std/1.2.0/async_std/task/fn.spawn_blocking.html) anymore and can simply deprecate it.
 - The new runtime makes **blocking efficient**. Rather than always paying the cost of `spawn_blocking`, we only offload blocking work to a separate thread if the work really blocks.
 
 The new task scheduling algorithm and the blocking strategy are adaptations of ideas used by the Go runtime to Rust.
