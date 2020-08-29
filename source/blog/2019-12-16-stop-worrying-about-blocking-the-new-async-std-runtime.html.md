@@ -2,7 +2,7 @@
 title: "Stop worrying about blocking: the new async-std runtime, inspired by Go"
 date: 2019-12-16
 tags: release,announcement,christmas
-author: "Stjepan Glavina"
+author: "The async-std developers"
 ---
 
 `async-std` is a mature and stable port of the Rust standard library to its new `async/await` world, designed to make async programming easy, efficient, worry- and error-free.

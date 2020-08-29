@@ -2,7 +2,7 @@
 title: Announcing async-std
 date: 2019-08-16
 tags: release,announcement
-author: "Stjepan Glavina"
+author: "The async-std developers"
 ---
 
 We are excited to announce a beta release of `async-std` with the intent to publish version `1.0` by *September 26th, 2019*.
